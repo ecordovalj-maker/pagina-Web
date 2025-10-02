@@ -1,69 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página Web</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUMIÉRE — Joyería</title>
+
+  <!-- Tipografías (elegante + legible) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    /* ====== Variables de color (paleta del PDF) ====== */
+    :root{
+      --bg: #f4efe9;        /* beige claro de fondo */
+      --ink: #1f1f1f;       /* texto principal */
+      --muted: #6b6b6b;     /* texto secundario */
+      --accent: #c6a571;    /* dorado suave */
+      --card: #fffaf3;      /* tarjetas claras */
     }
-    header {
-      background: #222;
-      color: white;
-      padding: 15px;
-      text-align: center;
+
+    /* ====== Reset mínimo y base ====== */
+    *{ box-sizing: border-box; }
+    html, body{ margin:0; padding:0; }
+    body{
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6;
     }
-    nav {
-      background: #444;
-      padding: 10px;
-      text-align: center;
+    img{ max-width: 100%; display:block; }
+
+    .container{
+      width: min(1100px, 92%);
+      margin: 0 auto;
     }
-    nav a {
-      color: white;
+
+    /* ====== Header / Marca ====== */
+    header{
+      border-bottom: 1px solid #e8dfd2;
+      background: var(--bg);
+      position: sticky; top: 0; z-index: 10;
+    }
+    .topbar{
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand{
+      font-family: "Playfair Display", serif;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      font-size: 26px;
+    }
+    .tagline{
+      font-size: 12px;
+      color: var(--muted);
+      margin-left: 8px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    /* ====== Nav ====== */
+    nav ul{
+      list-style: none; margin:0; padding:0;
+      display: flex; gap: 18px;
+    }
+    nav a{
       text-decoration: none;
-      margin: 0 15px;
+      color: var(--ink);
+      font-weight: 500;
     }
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover{
+      color: var(--accent);
     }
-    main {
-      padding: 20px;
+
+    /* ====== Hero (SOBRE LUMIÉRE) ====== */
+    .hero{
+      padding: 42px 0 28px;
+      border-bottom: 1px solid #e8dfd2;
     }
-    footer {
-      background: #222;
-      color: white;
+    .hero-grid{
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;   /* texto / imagen */
+      gap: 28px;
+      align-items: start;
+    }
+    .hero h1{
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 0 0 8px;
+      letter-spacing: .08em;
+    }
+    .hero h2{
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .hero p{
+      margin: 0 0 14px;
+    }
+    .cta-row{
+      margin-top: 16px;
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .btn{
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .btn.primary{
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+    .hero-illustration{
+      background: var(--card);
+      border: 1px dashed #e0d7c9;
+      min-height: 220px;
+      border-radius: 10px;
+      display: grid; place-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ====== Footer simple (no fijo, para que no tape contenido) ====== */
+    footer{
+      border-top: 1px solid #e8dfd2;
       text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      padding: 18px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 36px;
+    }
+
+    /* ====== Responsivo ====== */
+    @media (max-width: 800px){
+      .hero-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header>
-    <h1>LUMIERE</h1>
+    <div class="container topbar">
+      <div>
+        <span class="brand">LUMIÉRE</span>
+        <span class="tagline">joyería</span>
+      </div>
+
+      <nav aria-label="principal">
+        <ul>
+          <li><a href="#registrarte">Registrarte</a></li>
+          <li><a href="#sobre">Sobre nosotros</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#">REGISTRARTE</a>
-    <a href="#">SOBRE NOSOTROS</a>
-    <a href="#">CONTACTANOS</a>
-  </nav>
+  <!-- Hero / Sobre Lumiére -->
+  <section class="hero" id="sobre">
+    <div class="container hero-grid">
+      <div>
+        <h2>Sobre Lumiére</h2>
+        <h1>Inspirados en la magia de la luna y la belleza atemporal</h1>
 
-  <main>
-    <h2>COMIENZA A DESTACAR</h2>
-    <p>Inspirados en la magia de la luna y la belleza atemporal de los metales preciosos, en Luniere diseñamos piezas únicas que capturan momentos, emociones y memorias.
-</p>
-  </main>
+        <p>
+          En Luniere diseñamos piezas únicas que capturan momentos, emociones y memorias.
+          Cada joya es elaborada con precisión artesanal, combinando técnicas tradicionales
+          con un enfoque moderno en el diseño.
+        </p>
+        <p>
+          Desde anillos de compromiso hasta piezas personalizadas, creemos que cada detalle
+          cuenta y que cada joya debe contar una historia. Descubre una colección pensada
+          para brillar contigo, hoy y siempre.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#coleccion">Ver colección</a>
+          <a class="btn" href="#contacto">Contáctanos</a>
+        </div>
+      </div>
+
+      <div class="hero-illustration">
+        <!-- Aquí luego pondremos el logo/imagen del PDF -->
+        AUN NO SE COMO PONER IMAGEN PROFE
+      </div>
+    </div>
+  </section>
+
+  <!-- (Próximos pasos: secciones de “Collection New”, categorías y cards de producto) -->
 
   <footer>
-    <p>© 2025 Mi Página Web</p>
+    <div class="container">© 2025 LUMIÉRE</div>
   </footer>
-
 </body>
 </html>
