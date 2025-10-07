@@ -215,6 +215,95 @@
       </div>
     </div>
   </section>
+  <!-- CONTÁCTANOS -->
+  <section id="contacto" style="
+    background:#faf9f7;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 24px 24px;  /* textura sutil tipo mármol/papel */
+    padding:60px 0;
+    border-top:1px solid #e8dfd2;
+    font-family:Inter, sans-serif;
+  ">
+    <div class="container" style="max-width:1100px; margin:auto; display:grid; grid-template-columns:1.2fr 0.8fr; gap:40px;">
+      
+      <!-- Formulario -->
+      <div style="background:#fff; border:1px solid #e8dfd2; border-radius:12px; padding:30px; box-shadow:0 10px 25px rgba(0,0,0,0.05);">
+        <h2 style="font-family:'Playfair Display', serif; font-size:28px; letter-spacing:.1em; text-transform:uppercase; margin-top:0; color:#1f1f1f;">
+          Contáctanos
+        </h2>
+        <p style="color:#6b6b6b; margin-bottom:24px;">Envíanos un mensaje y te responderemos lo antes posible.</p>
+
+        <form action="#" method="post" style="display:grid; gap:16px;">
+          <input type="text" name="nombre" placeholder="Nombre completo" required style="padding:12px; border:1px solid #ddd; border-radius:6px; font-size:15px;">
+          <input type="email" name="correo" placeholder="Correo electrónico" required style="padding:12px; border:1px solid #ddd; border-radius:6px; font-size:15px;">
+          <input type="text" name="asunto" placeholder="Asunto" required style="padding:12px; border:1px solid #ddd; border-radius:6px; font-size:15px;">
+          <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required style="padding:12px; border:1px solid #ddd; border-radius:6px; font-size:15px; resize:none;"></textarea>
+          <button type="submit" style="
+            background:#c6a571; 
+            color:white;
+            border:none; 
+            border-radius:6px; 
+            padding:12px 16px; 
+            font-weight:600; 
+            letter-spacing:.05em;
+            cursor:pointer;
+            font-size:15px;
+          ">
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+
+      <!-- Info lateral -->
+      <aside style="display:grid; gap:18px; align-content:start;">
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5210000000000" target="_blank" style="
+          display:inline-flex; 
+          align-items:center; 
+          gap:10px; 
+          background:#25d366;
+          color:#fff; 
+          padding:10px 16px; 
+          border-radius:6px; 
+          text-decoration:none;
+          font-weight:600;
+          font-size:14px;
+        ">
+          <span style="font-size:18px;">💬</span> WhatsApp
+        </a>
+
+        <!-- Datos -->
+        <div style="color:#1f1f1f; line-height:1.7;">
+          <p style="margin:0;"><b>Dirección:</b> Av. de la Plata 123, CDMX</p>
+          <p style="margin:0;"><b>Teléfono:</b> +52 55 0000 0000</p>
+          <p style="margin:0;"><b>Correo:</b> contacto@lumiere.mx</p>
+          <p style="margin:0;"><b>Horario:</b> Lunes a Sábado · 10:00 a 19:00 hrs</p>
+        </div>
+
+        <!-- Mapa / imagen en blanco -->
+        <div style="
+          background:#fff;
+          border:1px solid #e8dfd2;
+          border-radius:10px;
+          height:200px;
+          display:grid;
+          place-items:center;
+          color:#6b6b6b;
+          font-size:14px;
+        ">
+          Mapa / imagen de ubicación (en blanco)
+        </div>
+      </aside>
+    </div>
+
+    <!-- versión apilada en móvil -->
+    <style>
+      @media (max-width:900px){
+        #contacto > .container { grid-template-columns: 1fr; }
+      }
+    </style>
+  </section>
 
 
   <footer>
